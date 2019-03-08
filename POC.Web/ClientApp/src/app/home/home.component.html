@@ -1,0 +1,27 @@
+<h1>Customers</h1>
+
+
+<p *ngIf="!customers"><em>Loading...</em></p>
+
+<table class='table' *ngIf="customers">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers">
+    <td>{{ customer.id }}</td>
+    <td>{{ customer.name }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<p>
+  Name:
+  <input type="text" [(ngModel)]="newCustomerName" />
+</p>
+<p>
+  <input type="button" value="Add customer" (click)="addCustomer()" />
+</p>
